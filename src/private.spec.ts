@@ -1,10 +1,14 @@
 import { Store } from './store';
 
+// Arrange
+const dummyInitialState = { client: '', items: [], status: '' };
+let sut;
 describe('A store with private state', () => {
-  it('should have an initial state', () => {
+  beforeEach(() => {
     // Arrange
-    const dummyInitialState = { client: '', items: [], status: '' };
-    const sut = new Store(dummyInitialState);
+    sut = new Store(dummyInitialState);
+  });
+  it('should have an initial state', () => {
     // Act
     const actual = sut.getState();
     // Assert
@@ -12,8 +16,6 @@ describe('A store with private state', () => {
     expect(actual).toStrictEqual(expected);
   });
   it('should be generic typed', () => {
-    const dummyInitialState = { client: '', items: [], status: '' };
-    const sut = new Store<basket>(dummyInitialState);
     // Act
     const actual = sut.getState();
     // Assert
@@ -21,25 +23,42 @@ describe('A store with private state', () => {
     expect(actual).toStrictEqual(expected);
   });
   it('should be inmutable after initialization', () => {
-    const dummyInitialState = { client: '', items: [], status: '' };
-    const sut = new Store<basket>(dummyInitialState);
     // Act
-    dummyInitialState.client = 'fakeCkient';
+    dummyInitialState.client = 'initial changed';
     const actual = sut.getState();
     // Assert
     const expected = { client: '', items: [], status: '' };
     expect(actual).toStrictEqual(expected);
   });
   it('should be inmutable after gotten state', () => {
-    const dummyInitialState = { client: '', items: [], status: '' };
-    const sut = new Store<basket>(dummyInitialState);
     // Act
     const dummyState = sut.getState();
-    dummyState.client = 'fakeCkient';
+    dummyState.client = 'state changed';
     const actual = sut.getState();
     // Assert
     const expected = { client: '', items: [], status: '' };
     expect(actual).toStrictEqual(expected);
   });
+  it('should allow changes on its state', () => {
+    // Act
+    const dummyState = { client: 'dummy change', items: [], status: '' };
+    sut.setState(dummyState);
+    const actual = sut.getState();
+    // Assert
+    const expected = { client: 'dummy change', items: [], status: '' };
+    expect(actual).toStrictEqual(expected);
+  });
+  it('should make changes inmutables', () => {
+    // Act
+    const dummyState = { client: 'dummy change', items: [], status: '' };
+    sut.setState(dummyState);
+    dummyState.client = 'dummy muttated';
+    const actual = sut.getState();
+    // Assert
+    const expected = { client: 'dummy change', items: [], status: '' };
+    expect(actual).toStrictEqual(expected);
+  });
+  afterEach(() => {
+    dummyInitialState.client = '';
+  });
 });
-type basket = { client: string; items: any[]; status: string };
