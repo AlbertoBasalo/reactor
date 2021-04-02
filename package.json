@@ -1,20 +1,20 @@
 {
-  "name": "quark",
-  "version": "1.5.0",
-  "description": "Fundamental project template",
+  "name": "rxjs-store",
+  "version": "1.0.0",
+  "description": "A basic implementation of redux like store",
   "author": {
     "name": "Alberto Basalo",
     "email": "albertobasalo@hotmail.com",
     "url": "https://twitter.com/albertobasalo"
   },
-  "homepage": "https://github.com/AtomicBuilders/quark#readme",
+  "homepage": "https://github.com/AtomicBuilders/rxjs-store#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AtomicBuilders/quark.git"
+    "url": "git+https://github.com/AtomicBuilders/rxjs-store.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AtomicBuilders/quark/issues"
+    "url": "https://github.com/AtomicBuilders/rxjs-store/issues"
   },
   "scripts": {
     "start": "node ./dist/main.js",
