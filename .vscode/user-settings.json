@@ -1,0 +1,103 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "vscode.markdown-language-features"
+  },
+  "editor.autoIndent": "full",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.addMissingImports": true,
+    "source.organizeImports": true,
+    "source.fixAll.eslint": true
+  },
+  "editor.codeLens": false,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.highlightActiveIndentGuide": true,
+  "editor.letterSpacing": 1,
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.renderIndentGuides": true,
+  "editor.rulers": [100],
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "emmet.excludeLanguages": ["markdown"],
+  "emmet.triggerExpansionOnTab": true,
+  "eslint.alwaysShowStatus": true,
+  "files.defaultLanguage": "",
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/node_modules": true
+  },
+  "files.hotExit": "onExit",
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "html.autoClosingTags": true,
+  "html.format.contentUnformatted": null,
+  "html.format.indentHandlebars": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.maxPreserveNewLines": 0,
+  "html.format.unformatted": "",
+  "html.format.wrapAttributes": "force-aligned",
+  "html.format.wrapLineLength": 100,
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "material-icon-theme.activeIconPack": "angular",
+  "material-icon-theme.folders.associations": {
+    "app": "Global",
+    "core": "Public",
+    "environments": "Config",
+    "shared": "Tools",
+    "domain": "class",
+    "ui": "views"
+  },
+  "search.exclude": {
+    "**/node_modules": true
+  },
+  "spellright.documentTypes": ["markdown", "latex", "plaintext", "html"],
+  "spellright.language": ["es", "en"],
+  "telemetry.enableTelemetry": false,
+  "terminal.integrated.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace",
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+  "window.zoomLevel": 0,
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "#f73454",
+    "editorWarning.foreground": "#0c4047",
+    "editorInfo.foreground": "#1857a4"
+  },
+  "workbench.colorTheme": "Andromeda Italic Bordered",
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "explorer.compactFolders": false,
+  "editor.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace",
+  "workbench.iconTheme": "material-icon-theme",
+  "githubIssues.useBranchForIssues": "prompt",
+  "githubIssues.issueBranchTitle": "${issueNumber}-${sanitizedIssueTitle} ",
+  "githubIssues.queries": [
+    {
+      "label": "My Issues",
+      "query": "default"
+    },
+    {
+      "label": "Created Issues",
+      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+    }
+  ],
+  "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration"
+}

@@ -1,0 +1,42 @@
+{
+  "Jest Should": {
+    "prefix": "ab-jst-shd",
+    "body": [
+      "describe('$1', () => {",
+      "  let sut;",
+      "  beforeEach(() => {",
+      "    // Arrange",
+      "    sut = null;",
+      "  });",
+      "  it('should $2', () => {",
+      "    // Act",
+      "    const actual = null;",
+      "    // Assert",
+      "    const expected = null;",
+      "    expect(actual).toBe(expected);",
+      "  });",
+      "});",
+    ],
+    "description": "Scaffold It Should with Jest"
+  },
+  "Jest Given When Then": {
+    "prefix": "ab-jst-gwt",
+    "body": [
+      "describe('GIVEN: $1', () => {",
+      "  let sut;",
+      "  beforeEach(() => {",
+      "    // Arrange",
+      "    sut = null;",
+      "  });",
+      "  it('WHEN $2 THEN $3', () => {",
+      "    // Act",
+      "    const actual = null;",
+      "    // Assert",
+      "    const expected = null;",
+      "    expect(actual).toBe(expected);",
+      "  });",
+      "});",
+    ],
+    "description": "Scaffold Given When Then with Jest"
+  }
+}
