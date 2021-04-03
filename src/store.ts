@@ -1,4 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 export class Store<T> {
   private _state$: BehaviorSubject<T>;
@@ -11,7 +11,7 @@ export class Store<T> {
   getState() {
     return this.clone(this.state);
   }
-  getState$() {
+  getState$(): Observable<T> {
     return this._state$.asObservable();
   }
   setState(state: T) {

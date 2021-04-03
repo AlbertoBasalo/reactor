@@ -2,7 +2,7 @@ import { Store } from './store';
 
 // Arrange
 const dummyInitialState = { client: '', items: [], status: '' };
-let sut;
+let sut: Store<any>;
 describe('A store with private state', () => {
   beforeEach(() => {
     // Arrange
