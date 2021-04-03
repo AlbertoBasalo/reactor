@@ -22,7 +22,7 @@ describe('A store with private state', () => {
     const expected = { client: '', items: [], status: '' };
     expect(actual).toStrictEqual(expected);
   });
-  it('should be inmutable after initialization', () => {
+  it('should be immutable after initialization', () => {
     // Act
     dummyInitialState.client = 'initial changed';
     const actual = sut.getState();
@@ -30,7 +30,7 @@ describe('A store with private state', () => {
     const expected = { client: '', items: [], status: '' };
     expect(actual).toStrictEqual(expected);
   });
-  it('should be inmutable after gotten state', () => {
+  it('should be immutable after gotten state', () => {
     // Act
     const dummyState = sut.getState();
     dummyState.client = 'state changed';
@@ -48,7 +48,7 @@ describe('A store with private state', () => {
     const expected = { client: 'dummy change', items: [], status: '' };
     expect(actual).toStrictEqual(expected);
   });
-  it('should make changes inmutables', () => {
+  it('should make changes immutables', () => {
     // Act
     const dummyState = { client: 'dummy change', items: [], status: '' };
     sut.setState(dummyState);
