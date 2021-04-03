@@ -1,22 +1,19 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 
 export class Store<T> {
-  private _state$: BehaviorSubject<T>;
-  private state: T;
+  private state$: BehaviorSubject<T>;
 
   constructor(initialState: T) {
-    this.state = this.clone(initialState);
-    this._state$ = new BehaviorSubject(this.state);
+    this.state$ = new BehaviorSubject(this.clone(initialState));
   }
   getState() {
-    return this.clone(this.state);
+    return this.clone(this.state$.value);
   }
   getState$(): Observable<T> {
-    return this._state$.asObservable();
+    return this.state$.asObservable();
   }
   setState(state: T) {
-    this.state = this.clone(state);
-    this._state$.next(this.state);
+    this.state$.next(this.clone(state));
   }
   private clone(source: T) {
     return { ...source };
