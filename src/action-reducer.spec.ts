@@ -14,11 +14,16 @@ describe('An store that dispatches new state with actions', () => {
   });
   it('should accept payload actions as new state', done => {
     // Act
-    const dummyAction = new Action<basket>('ADD_CLIENT', {
-      client: 'dummy action change',
-      items: [],
-      status: '',
-    });
+    const dummyAction = new Action<basket>(
+      'ADD_CLIENT',
+      {
+        client: 'dummy action change',
+      },
+      (state, payload) => {
+        state.client = payload.client;
+        return state;
+      }
+    );
     sut.dispatch(dummyAction);
     let actual: basket;
     sut

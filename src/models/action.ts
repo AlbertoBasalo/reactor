@@ -1,3 +1,5 @@
-export class Action {
-  constructor(readonly type: string, readonly payload: any) {}
+import { Reducer } from './reducer';
+
+export class Action<T> {
+  constructor(readonly type: string, readonly payload: unknown, readonly reducer?: Reducer<T>) {}
 }
