@@ -45,9 +45,17 @@ describe('A store with selection feature', () => {
           done();
         },
       });
-    sut.setState({ client: '', items: [{ name: 'no' }], status: '' });
-    sut.setState({ client: '', items: [{ name: 'no' }], status: 'CLIENT' });
-    sut.setState({ client: '', items: [{ name: 'no' }], status: 'CHANGED' });
-    sut.setState({ client: 'Changed', items: [{ name: 'detected' }], status: 'OK!' });
+    sut.setState({ client: '', items: [{ name: 'no', unitPrice: 1, units: 0 }], status: '' });
+    sut.setState({ client: '', items: [{ name: 'no', unitPrice: 1, units: 0 }], status: 'CLIENT' });
+    sut.setState({
+      client: '',
+      items: [{ name: 'no', unitPrice: 1, units: 0 }],
+      status: 'CHANGED',
+    });
+    sut.setState({
+      client: 'Changed',
+      items: [{ name: 'detected', unitPrice: 1, units: 0 }],
+      status: 'OK!',
+    });
   });
 });
