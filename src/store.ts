@@ -2,8 +2,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { Action } from './models/action';
 
-// ToDo: Selector with projection and distinct until change
-
 export class Store<T> {
   private _state$: BehaviorSubject<T>;
   private _actions$: BehaviorSubject<Action<T>>;
@@ -19,7 +17,7 @@ export class Store<T> {
   getState$(): Observable<T> {
     return this._state$.asObservable().pipe(map(state => this.clone(state)));
   }
-  select$(selector: (state: T) => any) {
+  select$(selector: (state: T) => any): Observable<any> {
     return this.getState$().pipe(map(selector), distinctUntilChanged());
   }
   getActions$(): Observable<Action<T>> {

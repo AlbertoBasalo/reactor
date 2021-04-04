@@ -17,10 +17,7 @@
     "url": "https://github.com/AtomicBuilders/rxjs-store/issues"
   },
   "scripts": {
-    "start": "node ./dist/main.js",
-    "prestart": "npm run build",
     "build": "tsc",
-    "dev": "ts-node ./src/main.ts",
     "test": "jest",
     "test:watch": "jest --watch --verbose --noStackTrace",
     "test:coverage": "jest --coverage",
