@@ -1,1 +1,1 @@
-export type basket = { client: string; items: any[]; status: string };
+export type Basket = { client: string; items: any[]; status: string };

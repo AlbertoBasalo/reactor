@@ -2,19 +2,19 @@
 
 import { take } from 'rxjs/operators';
 import { Action } from './models/action';
-import { basket } from './models/basket';
+import { Basket } from './models/basket';
 import { Store } from './store';
 
 describe('An store that dispatches new state with actions', () => {
   const dummyInitialState = { client: '', items: [], status: '' };
-  let sut: Store<basket>;
+  let sut: Store<Basket>;
   beforeEach(() => {
     // Arrange
-    sut = new Store<basket>(dummyInitialState);
+    sut = new Store<Basket>(dummyInitialState);
   });
   it('should accept payload actions as new state', done => {
     // Act
-    const dummyAction = new Action<basket>(
+    const dummyAction = new Action<Basket>(
       'ADD_CLIENT',
       {
         client: 'dummy action change',
@@ -25,7 +25,7 @@ describe('An store that dispatches new state with actions', () => {
       }
     );
     sut.dispatch(dummyAction);
-    let actual: basket;
+    let actual: Basket;
     sut
       .getState$()
       .pipe(take(1))
@@ -41,13 +41,13 @@ describe('An store that dispatches new state with actions', () => {
   });
   it('should emit the processed actions for instrumentation or effects', done => {
     // Act
-    const dummyAction = new Action<basket>('ADD_CLIENT', {
+    const dummyAction = new Action<Basket>('ADD_CLIENT', {
       client: 'dummy action change',
       items: [],
       status: '',
     });
     sut.dispatch(dummyAction);
-    let actual: Action<basket>;
+    let actual: Action<Basket>;
     sut
       .getActions$()
       .pipe(take(1))
@@ -55,7 +55,7 @@ describe('An store that dispatches new state with actions', () => {
         next: state => (actual = state),
         complete: () => {
           // Assert
-          const expected = new Action<basket>('ADD_CLIENT', {
+          const expected = new Action<Basket>('ADD_CLIENT', {
             client: 'dummy action change',
             items: [],
             status: '',

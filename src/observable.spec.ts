@@ -1,14 +1,14 @@
 /* eslint-disable jest/no-done-callback */
 import { skip, take, tap } from 'rxjs/operators';
-import { basket } from './models/basket';
+import { Basket } from './models/basket';
 import { Store } from './store';
 
 describe('An observable store', () => {
   const dummyInitialState = { client: '', items: [], status: '' };
-  let sut: Store<basket>;
+  let sut: Store<Basket>;
   beforeEach(() => {
     // Arrange
-    sut = new Store<basket>(dummyInitialState);
+    sut = new Store<Basket>(dummyInitialState);
   });
   it('should emit initial state', done => {
     // Act
@@ -54,7 +54,7 @@ describe('An observable store', () => {
     sut.setState(dummyState);
   });
   it('should emit several changes', done => {
-    const actual: basket[] = [];
+    const actual: Basket[] = [];
     // Act
     const dummyStateBefore = { client: 'dummy change before', items: [], status: '' };
     sut.setState(dummyStateBefore);
