@@ -1,6 +1,6 @@
 {
   "name": "reactor",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A basic implementation of redux like store with RxJs",
   "author": {
     "name": "Alberto Basalo",
@@ -16,6 +16,11 @@
   "bugs": {
     "url": "https://github.com/AtomicBuilders/reactor/issues"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest",
