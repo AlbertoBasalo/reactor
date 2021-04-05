@@ -1,4 +1,6 @@
-# RxJs-Store
+# ☢ Reactor
+
+## RxJs-Store
 
 Basic **Observable Store** made with RxJs
 
