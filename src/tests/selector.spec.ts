@@ -8,7 +8,7 @@ describe('A store with selection feature', () => {
   const dummyInitialState = { client: '', items: [], status: '' };
   beforeEach(() => {
     // Arrange
-    sut = new Store(dummyInitialState);
+    sut = new Store<Basket>(dummyInitialState);
   });
   it('should allow get a projection', done => {
     // Act
@@ -29,7 +29,7 @@ describe('A store with selection feature', () => {
   });
   it('should hide events without change get a projection', done => {
     // Act
-    let actual = 0;
+    let actual: unknown;
     const selector = (state: Basket) => state.client;
     sut
       .select$(selector)

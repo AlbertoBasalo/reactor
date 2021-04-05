@@ -29,7 +29,7 @@ basket$.getActions$().subscribe({
 });
 // dispatch simple action
 const setClientAction: Action<Basket> = new Action<Basket>('SET_CLIENT', {
-  client: 'Jhon Doe',
+  client: 'John Doe',
   items: [],
   status: 'EMPTY',
 });
@@ -42,8 +42,8 @@ const itemPayload: Item = {
   units: 1,
   unitPrice: 99,
 };
-const addItemReducer = (basket: Basket, payload: Item) => {
-  basket.items.push(payload);
+const addItemReducer = (basket: Basket, payload: unknown) => {
+  basket.items.push(payload as Item);
   return basket;
 };
 const addItemAction: Action<Basket> = new Action<Basket>('ADD_ITEM', itemPayload, addItemReducer);
