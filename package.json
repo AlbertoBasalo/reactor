@@ -1,5 +1,5 @@
 {
-  "name": "reactor",
+  "name": "@atomic.builders/reactor",
   "version": "1.2.3",
   "description": "A basic implementation of redux like store with RxJs",
   "author": {
@@ -31,6 +31,7 @@
     "lint:fix": "npm run lint -- --fix",
     "prerelease": "standard-version ",
     "release": "git push --follow-tags origin master",
+    "publish": "npm publish --access public",
     "updates": "ncu -u"
   },
   "devDependencies": {
