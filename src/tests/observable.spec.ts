@@ -1,7 +1,7 @@
 /* eslint-disable jest/no-done-callback */
 import { skip, take, tap } from 'rxjs/operators';
-import { Basket } from './models/basket';
-import { Store } from './store';
+import { Basket } from '../models/basket';
+import { Store } from '../store';
 
 describe('An observable store', () => {
   const dummyInitialState = { client: '', items: [], status: '' };

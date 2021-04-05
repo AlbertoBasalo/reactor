@@ -1,12 +1,13 @@
-import { Store } from './store';
+import { Basket } from '../models/basket';
+import { Store } from '../store';
 
 // Arrange
 const dummyInitialState = { client: '', items: [], status: '' };
-let sut: Store<any>;
+let sut: Store<Basket>;
 describe('A store with private state', () => {
   beforeEach(() => {
     // Arrange
-    sut = new Store(dummyInitialState);
+    sut = new Store<Basket>(dummyInitialState);
   });
   it('should have an initial state', () => {
     // Act
