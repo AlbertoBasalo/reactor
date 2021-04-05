@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/AtomicBuilders/reactor/compare/v1.1.1...v1.2.0) (2021-04-05)
+
+
+### Features
+
+* rename to reactor ([47924b7](https://github.com/AtomicBuilders/reactor/commit/47924b7dcdf730e139f5150322ea0da686258ed9))
+
 ### [1.1.1](https://github.com/AtomicBuilders/rxjs-store/compare/v1.1.0...v1.1.1) (2021-04-04)
 
 ## 1.1.0 (2021-04-04)
