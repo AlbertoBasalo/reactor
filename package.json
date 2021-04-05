@@ -1,6 +1,6 @@
 {
   "name": "@atomic.builders/reactor",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "A basic implementation of redux like store with RxJs",
   "author": {
     "name": "Alberto Basalo",
