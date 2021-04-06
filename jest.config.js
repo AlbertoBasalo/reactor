@@ -3,7 +3,7 @@
 module.exports = {
   preset: 'ts-jest',
   moduleNameMapper: {
-    '@exmpl/(.*)': '<rootDir>/src/$1',
+    '@ab/(.*)': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: ['<rootDir>/dist/'],
   verbose: false,

@@ -1,9 +1,7 @@
-/* eslint-disable jest/no-done-callback */
-
+import { Action } from '@ab/models/action';
+import { Basket } from '@ab/models/basket';
+import { Store } from '@ab/store';
 import { take } from 'rxjs/operators';
-import { Action } from '../models/action';
-import { Basket } from '../models/basket';
-import { Store } from '../store';
 
 describe('An store that dispatches new state with actions', () => {
   const dummyInitialState = { client: '', items: [], status: '' };

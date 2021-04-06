@@ -1,5 +1,5 @@
-import { Basket } from '../models/basket';
-import { Store } from '../store';
+import { Basket } from '@ab/models/basket';
+import { Store } from '@ab/store';
 
 // Arrange
 const dummyInitialState = { client: '', items: [], status: '' };
@@ -49,11 +49,11 @@ describe('A store with private state', () => {
     const expected = { client: 'dummy change', items: [], status: '' };
     expect(actual).toStrictEqual(expected);
   });
-  it('should make changes immutables', () => {
+  it('should make changes immutable', () => {
     // Act
     const dummyState = { client: 'dummy change', items: [], status: '' };
     sut.setState(dummyState);
-    dummyState.client = 'dummy muttated';
+    dummyState.client = 'dummy mutated';
     const actual = sut.getState();
     // Assert
     const expected = { client: 'dummy change', items: [], status: '' };

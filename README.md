@@ -1,4 +1,4 @@
-![npm (scoped)](https://img.shields.io/npm/v/@atomic.builders/reactor)
+[![npm (scoped)](https://img.shields.io/npm/v/@atomic.builders/reactor)](https://www.npmjs.com/package/@atomic.builders/reactor)
 
 # ☢ Reactor
 
@@ -10,7 +10,15 @@ Basic _minimalistic REDUX_ made with RxJs
 
 ## 🎯 Motivation
 
-Avoid the use of heavy and complex libraries like _NgRX_
+✅ Avoid the use of heavy and complex libraries like _NgRX_
+
+✅ Less than 100 lines [store.ts](https://github.com/AtomicBuilders/reactor/blob/master/src/store.ts)
+
+## Installation
+
+```bash
+npm i @atomic.builders/reactor
+```
 
 ## ✨ Sample use
 

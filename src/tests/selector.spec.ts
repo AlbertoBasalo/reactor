@@ -1,7 +1,6 @@
-/* eslint-disable jest/no-done-callback */
+import { Basket } from '@ab/models/basket';
+import { Store } from '@ab/store';
 import { take } from 'rxjs/operators';
-import { Basket } from '../models/basket';
-import { Store } from '../store';
 
 describe('A store with selection feature', () => {
   let sut: Store<Basket>;

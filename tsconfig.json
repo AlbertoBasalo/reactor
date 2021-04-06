@@ -16,7 +16,7 @@
     /* Module Resolution Options */
     "baseUrl": "./",
     "paths": {
-      "@exmpl/*": ["src/*", "dist/*"]
+      "@ab/*": ["src/*", "dist/*"]
     },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

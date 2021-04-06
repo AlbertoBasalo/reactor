@@ -1,7 +1,8 @@
-import { Action } from './models/action';
-import { Basket } from './models/basket';
-import { Item } from './models/item';
-import { Store } from './store';
+import { Action } from '@ab/models/action';
+import { Basket } from '@ab/models/basket';
+import { Item } from '@ab/models/item';
+import { Store } from '@ab/store';
+
 const initialBasket: Basket = { client: '', items: [], status: '' };
 const basket$ = new Store<Basket>(initialBasket);
 
