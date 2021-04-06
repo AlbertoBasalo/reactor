@@ -51,7 +51,6 @@ basket$.getActions$().subscribe({
 // dispatch simple action
 const setClientAction: Action<Basket> = new Action<Basket>('SET_CLIENT', {
   client: 'John Doe',
-  items: [],
   status: 'EMPTY',
 });
 basket$.dispatch(setClientAction);
@@ -60,11 +59,12 @@ basket$.dispatch(setClientAction);
 // dispatch action with payload and reducer
 const itemPayload: Item = {
   name: 'An ACME thing',
-  units: 1,
-  unitPrice: 99,
+  units: 19,
+  unitPrice: 71,
 };
 const addItemReducer = (basket: Basket, payload: unknown) => {
-  basket.items.push(payload as Item);
+  basket.items = [...basket.items, payload as Item];
+  basket.status = 'FILLED';
   return basket;
 };
 const addItemAction: Action<Basket> = new Action<Basket>('ADD_ITEM', itemPayload, addItemReducer);

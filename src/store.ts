@@ -59,7 +59,7 @@ export class Store<T> {
    * @param state the new value of the state to be stored and emitted
    */
   setState(state: T): void {
-    this._state$.next(this.clone(state));
+    this.dispatch({ type: 'SET_STATE', payload: state });
   }
   /**
    * The canonical and monitored way of changing the state
@@ -75,7 +75,7 @@ export class Store<T> {
     } else {
       newState = { ...currentState, ...payload };
     }
-    this.setState(newState);
+    this._state$.next(this.clone(newState));
     this._actions$.next(action);
   }
 

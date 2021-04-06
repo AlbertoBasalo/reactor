@@ -16,6 +16,7 @@ describe('An store that dispatches new state with actions', () => {
       'ADD_CLIENT',
       {
         client: 'dummy action change',
+        status: 'EMPTY',
       },
       (state, payload) => {
         state.client = payload.client;
