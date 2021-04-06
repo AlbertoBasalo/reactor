@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/AtomicBuilders/reactor/compare/v1.2.7...v2.0.0) (2021-04-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* allow partial changes, generate acation from setstate
+
+### Features
+
+* allow partial changes, generate acation from setstate ([7c4579e](https://github.com/AtomicBuilders/reactor/commit/7c4579e9924acf400209a1e503bd682bfc5f4b75))
+
 ### [1.2.7](https://github.com/AtomicBuilders/reactor/compare/v1.2.6...v1.2.7) (2021-04-06)
 
 ### [1.2.6](https://github.com/AtomicBuilders/reactor/compare/v1.2.5...v1.2.6) (2021-04-05)
