@@ -10,8 +10,9 @@ describe('An observable inmutable store', () => {
     // Arrange
     sut = new Store<Basket>(dummyInitialState);
   });
-  it('should not emit changes not controlled', done => {
+  it('should not emit changes not controlled', () => {
     // Act
+    let actual;
     const dummyStateBefore = { client: 'dummy change before', items: [], status: '' };
     sut.setState(dummyStateBefore);
     let dummyState: Basket;
@@ -21,19 +22,19 @@ describe('An observable inmutable store', () => {
       .subscribe({
         next: state => (dummyState = state),
         complete: () => {
-          const actual = sut.getState();
+          actual = sut.getState();
           dummyState.client = 'dummy uncontrolled change!!!';
-          // Assert
-          const expected = { client: 'dummy change after', items: [], status: '' };
-          expect(actual).toStrictEqual(expected);
-          done();
         },
       });
     const dummyStateAfter = { client: 'dummy change after', items: [], status: '' };
     sut.setState(dummyStateAfter);
+    // Assert
+    const expected = { client: 'dummy change after', items: [], status: '' };
+    expect(actual).toStrictEqual(expected);
   });
-  it('should not change value from outside mutatations of emited values', done => {
+  it('should not change value from outside mutations of emitted values', () => {
     // Act
+    let actual;
     const dummyStateBefore = { client: 'dummy change before', items: [], status: '' };
     sut.setState(dummyStateBefore);
     let dummyState: Basket;
@@ -44,14 +45,13 @@ describe('An observable inmutable store', () => {
         next: state => (dummyState = state),
         complete: () => {
           dummyState.client = 'outside emitted mutations!!!';
-          const actual = sut.getState();
-          // Assert
-          const expected = { client: 'dummy change after', items: [], status: '' };
-          expect(actual).toStrictEqual(expected);
-          done();
+          actual = sut.getState();
         },
       });
     const dummyStateAfter = { client: 'dummy change after', items: [], status: '' };
     sut.setState(dummyStateAfter);
+    // Assert
+    const expected = { client: 'dummy change after', items: [], status: '' };
+    expect(actual).toStrictEqual(expected);
   });
 });

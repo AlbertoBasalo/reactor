@@ -12,7 +12,7 @@ describe('An store that dispatches new state with actions', () => {
     // Arrange
     sut = new Store<Basket>(dummyInitialState);
   });
-  it('should accept payload actions as new state', done => {
+  it('should accept payload actions as new state', () => {
     // Act
     const dummyAction = new Action<Basket>(
       'ADD_CLIENT',
@@ -25,21 +25,18 @@ describe('An store that dispatches new state with actions', () => {
       }
     );
     sut.dispatch(dummyAction);
-    let actual: Basket;
+    let actual;
     sut
       .getState$()
       .pipe(take(1))
       .subscribe({
         next: state => (actual = state),
-        complete: () => {
-          // Assert
-          const expected = { client: 'dummy action change', items: [], status: '' };
-          expect(actual).toStrictEqual(expected);
-          done();
-        },
       });
+    // Assert
+    const expected = { client: 'dummy action change', items: [], status: '' };
+    expect(actual).toStrictEqual(expected);
   });
-  it('should emit the processed actions for instrumentation or effects', done => {
+  it('should emit the processed actions for instrumentation or effects', () => {
     // Act
     const dummyAction = new Action<Basket>('ADD_CLIENT', {
       client: 'dummy action change',
@@ -47,23 +44,20 @@ describe('An store that dispatches new state with actions', () => {
       status: '',
     });
     sut.dispatch(dummyAction);
-    let actual: Action<Basket>;
+    let actual;
     sut
       .getActions$()
       .pipe(take(1))
       .subscribe({
         next: state => (actual = state),
-        complete: () => {
-          // Assert
-          const expected = new Action<Basket>('ADD_CLIENT', {
-            client: 'dummy action change',
-            items: [],
-            status: '',
-          });
-          expect(actual.type).toStrictEqual(expected.type);
-          expect(actual.payload).toStrictEqual(expected.payload);
-          done();
-        },
       });
+    // Assert
+    const expected = new Action<Basket>('ADD_CLIENT', {
+      client: 'dummy action change',
+      items: [],
+      status: '',
+    });
+    expect(actual ? actual['type'] : null).toStrictEqual(expected.type);
+    expect(actual ? actual['payload'] : null).toStrictEqual(expected.payload);
   });
 });

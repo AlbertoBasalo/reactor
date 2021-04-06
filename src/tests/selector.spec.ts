@@ -10,7 +10,7 @@ describe('A store with selection feature', () => {
     // Arrange
     sut = new Store<Basket>(dummyInitialState);
   });
-  it('should allow get a projection', done => {
+  it('should allow get a projection', () => {
     // Act
     let actual = null;
     const selector = (state: Basket) => state.client;
@@ -18,16 +18,13 @@ describe('A store with selection feature', () => {
       .select$(selector)
       .pipe()
       .subscribe({
-        next: result => {
-          actual = result;
-          // Assert
-          const expected = '';
-          expect(actual).toStrictEqual(expected);
-          done();
-        },
+        next: result => (actual = result),
       });
+    // Assert
+    const expected = '';
+    expect(actual).toStrictEqual(expected);
   });
-  it('should hide events without change get a projection', done => {
+  it('should hide events without change get a projection', () => {
     // Act
     let actual: unknown;
     const selector = (state: Basket) => state.client;
@@ -35,15 +32,7 @@ describe('A store with selection feature', () => {
       .select$(selector)
       .pipe(take(2))
       .subscribe({
-        next: result => {
-          actual = result;
-        },
-        complete: () => {
-          // Assert
-          const expected = 'Changed';
-          expect(actual).toBe(expected);
-          done();
-        },
+        next: result => (actual = result),
       });
     sut.setState({ client: '', items: [{ name: 'no', unitPrice: 1, units: 0 }], status: '' });
     sut.setState({ client: '', items: [{ name: 'no', unitPrice: 1, units: 0 }], status: 'CLIENT' });
@@ -57,5 +46,8 @@ describe('A store with selection feature', () => {
       items: [{ name: 'detected', unitPrice: 1, units: 0 }],
       status: 'OK!',
     });
+    // Assert
+    const expected = 'Changed';
+    expect(actual).toBe(expected);
   });
 });
