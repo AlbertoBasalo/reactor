@@ -32,7 +32,6 @@
     "prerelease": "standard-version ",
     "release": "git push --follow-tags origin master",
     "prepublishOnly": "npm run build",
-    "publish": "npm publish --access public",
     "updates": "ncu -u"
   },
   "devDependencies": {
