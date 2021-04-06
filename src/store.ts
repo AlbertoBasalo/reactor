@@ -67,12 +67,15 @@ export class Store<T> {
    * @remarks The reducer is optional, in that case the payload will be saved as the new state
    */
   dispatch(action: Action<T>): void {
+    const currentState = this.getState();
+    const payload = action.payload as T;
+    let newState: T;
     if (action.reducer) {
-      const newState = action.reducer(this.getState(), action.payload);
-      this.setState(newState);
+      newState = action.reducer(currentState, payload);
     } else {
-      this.setState(action.payload as T);
+      newState = { ...currentState, ...payload };
     }
+    this.setState(newState);
     this._actions$.next(action);
   }
 
