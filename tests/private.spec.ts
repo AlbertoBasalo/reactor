@@ -1,5 +1,5 @@
-import { Basket } from '@ab/models/basket';
-import { Store } from '@ab/store';
+import { Basket } from '../samples/basket';
+import { Store } from '../src/store';
 
 // Arrange
 const dummyInitialState = { client: '', items: [], status: '' };

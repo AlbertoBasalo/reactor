@@ -1,6 +1,6 @@
-import { Basket } from '@ab/models/basket';
-import { Store } from '@ab/store';
 import { take } from 'rxjs/operators';
+import { Basket } from '../samples/basket';
+import { Store } from '../src/store';
 
 describe('An observable inmutable store', () => {
   const dummyInitialState = { client: '', items: [], status: '' };

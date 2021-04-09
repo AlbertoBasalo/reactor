@@ -1,8 +1,8 @@
-import { Action } from '@ab/models/action';
-import { Basket } from '@ab/models/basket';
-import { Item } from '@ab/models/item';
-import { Store } from '@ab/store';
 import { Observable } from 'rxjs';
+import { Basket } from '../samples/basket';
+import { Item } from '../samples/item';
+import { Action } from '../src/models/action';
+import { Store } from '../src/store';
 
 export class Basket$ {
   // avoid direct access to store methods

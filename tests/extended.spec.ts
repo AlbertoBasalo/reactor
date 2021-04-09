@@ -1,4 +1,4 @@
-import { Basket$ } from '@ab/samples/composed';
+import { Basket$ } from '../samples/extended';
 
 describe('An extended store', () => {
   let sut: Basket$;
@@ -6,7 +6,7 @@ describe('An extended store', () => {
   beforeEach(() => {
     // Arrange
     sut = new Basket$();
-    sut.getBasket$().subscribe({
+    sut.getState$().subscribe({
       next: basket => actual.push(basket),
     });
   });

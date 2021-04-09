@@ -1,7 +1,7 @@
-import { Action } from '@ab/models/action';
-import { Basket } from '@ab/models/basket';
-import { Store } from '@ab/store';
 import { take } from 'rxjs/operators';
+import { Basket } from '../samples/basket';
+import { Action } from '../src/models/action';
+import { Store } from '../src/store';
 
 describe('An store that dispatches new state with actions', () => {
   const dummyInitialState = { client: '', items: [], status: '' };
