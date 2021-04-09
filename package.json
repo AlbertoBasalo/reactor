@@ -1,6 +1,6 @@
 {
   "name": "@atomic-builders/reactor",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A basic implementation of redux like store with RxJs",
   "author": {
     "name": "Alberto Basalo",
@@ -18,11 +18,14 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "/dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json ",
     "test": "jest",
     "test:watch": "jest --watch --verbose --noStackTrace",
     "test:coverage": "jest --coverage",
