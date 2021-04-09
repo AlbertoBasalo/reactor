@@ -1,4 +1,4 @@
-[![npm (scoped)](https://img.shields.io/npm/v/@atomic.builders/reactor)](https://www.npmjs.com/package/@atomic.builders/reactor)
+[![npm (scoped)](https://img.shields.io/npm/v/@atomic.builders/reactor)](https://www.npmjs.com/package/@atomic-builders/reactor)
 
 # ☢ Reactor
 
