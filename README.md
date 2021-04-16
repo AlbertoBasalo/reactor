@@ -1,3 +1,5 @@
+> ⚠ Right now the deployed version at NPM only works with node projects. Browser version is comming soon.
+
 [![npm (scoped)](https://img.shields.io/npm/v/@atomic.builders/reactor)](https://www.npmjs.com/package/@atomic-builders/reactor)
 
 # ☢ Reactor
